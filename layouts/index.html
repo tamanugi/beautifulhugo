@@ -7,12 +7,12 @@
 
     {{ partial "nav.html" . }}
 
-    {{ if isset .Site.Params.bigimg 0 }}
+    {{ if isset .Site.Params "bigimg" }}
       <div id="header-big-imgs" data-num-img={{len .Site.Params.bigimg}} {{range $i, $img := .Site.Params.bigimg}}data-img-src-{{add $i 1}}="{{$img.src}}" data-img-desc-{{add $i 1}}="{{$img.desc}}"{{end}}></div>
     {{ end }}
 
-   <header class="header-section {{ if isset .Site.Params.bigimg 0 }}has-img{{ end }}">
-      {{ if isset .Site.Params.bigimg 0 }}
+   <header class="header-section {{ if isset .Site.Params 'bigimg' }}has-img{{ end }}">
+      {{ if isset .Site.Params "bigimg" }}
         <div class="intro-header big-img">
           <div class="container">
             <div class="row">
